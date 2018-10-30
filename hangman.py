@@ -45,3 +45,51 @@ def draw_hangman(num_wrong_guesses):
         output = output + "\n |"
     output = output + "____\n\n"
     print(output)
+
+
+stored_name = input("What is your name? ")
+print("Hello, {}! It's time to play hangman".format(stored_name))
+
+find_word = "test"
+
+errors = 0
+while errors < 6:
+    guess = input("Enter a letter: ")
+
+    if guess.lower() in find_word:
+        print("Good job!")
+    else:
+        print("Try again. You failed at life.")
+        errors = errors + 1
+        print("errors = {}".format(errors))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

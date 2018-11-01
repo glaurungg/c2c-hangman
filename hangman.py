@@ -52,9 +52,13 @@ print("Hello, {}! It's time to play hangman".format(stored_name))
 
 find_word = "test"
 
+guesses_made = []
+
 errors = 0
-while errors < 6:
-    guess = input("Enter a letter: ")
+while errors < num_wrong_guesses_allowed:
+    guess = input("\nEnter a letter: ")
+    guesses_made.append(guess)
+    print(guesses_made)
 
     if guess.lower() in find_word:
         print("Good job!")
@@ -62,7 +66,10 @@ while errors < 6:
         print("Try again. You failed at life.")
         errors = errors + 1
         print("errors = {}".format(errors))
+        if errors == num_wrong_guesses_allowed:
+            print("Sorry, You've lost")
 
+    draw_hangman(errors)
 
 
 
